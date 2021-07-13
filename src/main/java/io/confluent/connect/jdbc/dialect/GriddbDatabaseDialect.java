@@ -168,4 +168,14 @@ public class GriddbDatabaseDialect extends GenericDatabaseDialect {
     return builder.toString();
   }
 
+  /**
+   * Get the query string to determine the current timestamp in the database.
+   *
+   * @return the query string; never null or empty
+   */
+  @Override
+  protected String currentTimestampDatabaseQuery() {
+    return "SELECT NOW()";
+  }
+
 }
